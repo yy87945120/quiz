@@ -13,10 +13,10 @@
         $arr[$rowH][$counter]['s'] = "";
         $arr[$rowH][$counter]['l'] = "";
         $arr[$rowH][$counter]['width'] = 0;
-        
+        foreach($arrL as $k2=>$rowL){
         foreach($arrS as $k1=>$rowS){
             
-            foreach($arrL as $k2=>$rowL){
+           
                 $arr[$rowH][$counter]['h'] = $rowH;
                 $arr[$rowH][$counter]['s'] = $rowS;
                 $arr[$rowH][$counter]['l'] = $rowL;

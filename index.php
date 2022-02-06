@@ -13,10 +13,10 @@
         $arr[$rowH][$counter]['s'] = "";
         $arr[$rowH][$counter]['l'] = "";
         $arr[$rowH][$counter]['width'] = 0;
-        
-        foreach($arrS as $k1=>$rowS){
+        foreach($arrL as $k2=>$rowL){
+            foreach($arrS as $k1=>$rowS){
             
-            foreach($arrL as $k2=>$rowL){
+            
                 $arr[$rowH][$counter]['h'] = $rowH;
                 $arr[$rowH][$counter]['s'] = $rowS;
                 $arr[$rowH][$counter]['l'] = $rowL;
@@ -49,6 +49,7 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="./css/style.css">
     <script src="./javascript/index.js"></script>
     <style>
         
@@ -66,24 +67,24 @@
         
     </div>
     <div id="content" style="width:100%;overflow-x:auto">
-    <div style='width:2800px;height:400px;margin:0px;padding:0px;'>
+    <div style='width:6000px;height:900px;margin:0px;padding:0px;display:flex;'>
     <?php
         foreach($arr as $k=>$row){
            
             
             // echo '<div style="width:auto;height:auto;display:flex;flex-wrap:wrap;align-items:flex-end">';
-            echo '<div style="max-width:200px;height:auto;display:inline-block;margin:0px;padding:0px">';
+            echo '<div style="flex-wrap:wrap;max-width:400px;height:auto;display:flex;align-items:center;justify-content:center;margin:0px;padding:0px">';
             foreach($row as $kDetail=>$rowDetail){
-                $width = 20;
+                $width = 55;
                 
                 if($rowDetail['counter'] == 0){
-                    echo "<div style='vertical-align:bottom;outline:none;border-left:2px solid white;border-top:2px solid white;display:inline-block;text-align:center;line-height:".$width."px;color:white;width:".$width."px;height:".$width."px;'>
-                    ".$rowDetail['counter']."
+                    echo "<div style='background:rgba(243,243,243);outline:none;border:1px solid #383333;display:inline-block;text-align:center;line-height:".$width."px;color:white;width:".$width."px;height:".$width."px;'>
+                    
                 </div>";
                 }else{
-                    $width = $width+($width * $rowDetail['counter'] / 100);
-                    $height = $width+($width * $rowDetail['counter'] / 100);
-                    echo "<div id='".$rowDetail['h']."-".$rowDetail['s']."-".$rowDetail['l']."' style='vertical-align:bottom;outline:none;border-left:2px solid white;border-top:2px solid white;display:inline-block;text-align:center;line-height:".$width."px;color:white;width:".$width."px;height:".$width."px;background:hsl(".$rowDetail['h'].",".$rowDetail['s']."%,".$rowDetail['l']."%)'>
+                    $width = ($width+$width*($rowDetail['counter'] / 100))>2.5*$width?2*$width:($width+$width*($rowDetail['counter'] / 100));
+                    $height = ($width+$width*($rowDetail['counter'] / 100))>2.5*$width?2*$width:($width+$width*($rowDetail['counter'] / 100));
+                    echo "<div id='".$rowDetail['h']."-".$rowDetail['s']."-".$rowDetail['l']."' style='vertical-align:bottom;outline:none;border:1px solid #383333;display:inline-block;text-align:center;line-height:".$width."px;color:white;width:".$width."px;height:".$width."px;background:hsl(".$rowDetail['h'].",".$rowDetail['s']."%,".$rowDetail['l']."%)'>
                     
                 </div>";
                 }
