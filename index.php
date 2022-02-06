@@ -1,5 +1,5 @@
 <?php
-    require_once "./db.php";
+    require_once "./data/db.php";
     $arrH = ["305","320","340","360","20","53","75","140","160","183","224","240","260","275"];
     $arrS = ["95","85","70","60","50"];
     $arrL = ["40","45","60","70","80"];
@@ -67,13 +67,13 @@
         
     </div>
     <div id="content" style="width:100%;overflow-x:auto">
-    <div style='width:6000px;height:900px;margin:0px;padding:0px;display:flex;'>
+    <div style='width:6000px;height:900px;margin:0px;padding:0px;display:flex;align-items:center;justify-content:center;'>
     <?php
         foreach($arr as $k=>$row){
            
             
             // echo '<div style="width:auto;height:auto;display:flex;flex-wrap:wrap;align-items:flex-end">';
-            echo '<div style="flex-wrap:wrap;max-width:400px;height:auto;display:flex;align-items:center;justify-content:center;margin:0px;padding:0px">';
+            echo '<div style="flex-wrap:wrap;max-width:400px;height:auto;display:flexmargin:0px;padding:0px">';
             foreach($row as $kDetail=>$rowDetail){
                 $width = 55;
                 
